@@ -86,6 +86,7 @@ export function App() {
     <BlockNoteView 
       editor={editor}
       sideMenu={false}
+      formattingToolbar={false}
       >
       <FormattingToolbar />
       {/* Adds a mentions menu which opens with the "@" key */}
