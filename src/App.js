@@ -7,10 +7,12 @@ import "@blocknote/core/fonts/inter.css";
 import { BlockNoteView } from "@blocknote/mantine";
 import "@blocknote/mantine/style.css";
 import {
+  FormattingToolbar,
   SuggestionMenuController,
   useCreateBlockNote,
 } from "@blocknote/react";
  
+import './App.css';
 import { Mention } from "./Mention.jsx";
  
 // Our schema with inline content specs, which contain the configs and
@@ -81,7 +83,11 @@ export function App() {
   });
  
   return (
-    <BlockNoteView editor={editor}>
+    <BlockNoteView 
+      editor={editor}
+      
+      >
+      <FormattingToolbar />
       {/* Adds a mentions menu which opens with the "@" key */}
       <SuggestionMenuController
         triggerCharacter={"@"}
