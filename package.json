@@ -1,8 +1,11 @@
 {
-  "name": "react-tinymce-opensource",
+  "name": "react-blocknote-texteditor",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@blocknote/core": "^0.31.2",
+    "@blocknote/mantine": "^0.31.2",
+    "@blocknote/react": "^0.31.2",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
