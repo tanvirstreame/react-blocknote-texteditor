@@ -24,6 +24,7 @@ import {
 
 import "./App.css";
 import { Mention } from "./Mention.jsx";
+import EmojiToolbarButton from "./EmojiToolbarButton.jsx";
 
 // Our schema with inline content specs, which contain the configs and
 // implementations for inline content  that we want our editor to use.
@@ -141,6 +142,7 @@ export function App() {
             <UnnestBlockButton key={'unnestBlockButton'} />
 
             <CreateLinkButton key={'createLinkButton'} />
+             <EmojiToolbarButton editor={editor} />
           </FormattingToolbar>
         )}
       ></FormattingToolbarController>
