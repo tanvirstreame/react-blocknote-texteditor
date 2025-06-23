@@ -10,11 +10,21 @@ import {
   FormattingToolbar,
   SuggestionMenuController,
   useCreateBlockNote,
+  FormattingToolbarController,
+  BlockTypeSelect,
+  ColorStyleButton,
+  CreateLinkButton,
+  FileCaptionButton,
+  FileReplaceButton,
+  NestBlockButton,
+  TextAlignButton,
+  UnnestBlockButton,
+  BasicTextStyleButton,
 } from "@blocknote/react";
- 
-import './App.css';
+
+import "./App.css";
 import { Mention } from "./Mention.jsx";
- 
+
 // Our schema with inline content specs, which contain the configs and
 // implementations for inline content  that we want our editor to use.
 const schema = BlockNoteSchema.create({
@@ -25,13 +35,11 @@ const schema = BlockNoteSchema.create({
     mention: Mention,
   },
 });
- 
+
 // Function which gets all users for the mentions menu.
-const getMentionMenuItems = (
-  editor,
-) => {
+const getMentionMenuItems = (editor) => {
   const users = ["Steve", "Bob", "Joe", "Mike"];
- 
+
   return users.map((user) => ({
     title: user,
     onItemClick: () => {
@@ -47,7 +55,7 @@ const getMentionMenuItems = (
     },
   }));
 };
- 
+
 export function App() {
   const editor = useCreateBlockNote({
     schema,
@@ -81,26 +89,69 @@ export function App() {
       },
     ],
   });
- 
+
   return (
-    <BlockNoteView 
-      editor={editor}
-      sideMenu={false}
-      formattingToolbar={false}
-      >
-      <FormattingToolbar />
-      {/* Adds a mentions menu which opens with the "@" key */}
+    <BlockNoteView editor={editor} sideMenu={false} formattingToolbar={false}>
+      <FormattingToolbarController
+        formattingToolbar={() => (
+          <FormattingToolbar>
+            <BlockTypeSelect key={'blockTypeSelect'} />
+            <button onClick={() => editor.insertInlineContent("sf")}>sf</button>
+            <FileCaptionButton key={'fileCaptionButton'} />
+            <FileReplaceButton key={'replaceFileButton'} />
+
+            <BasicTextStyleButton
+              basicTextStyle={'bold'}
+              key={'boldStyleButton'}
+            />
+            <BasicTextStyleButton
+              basicTextStyle={'italic'}
+              key={'italicStyleButton'}
+            />
+            <BasicTextStyleButton
+              basicTextStyle={'underline'}
+              key={'underlineStyleButton'}
+            />
+            <BasicTextStyleButton
+              basicTextStyle={'strike'}
+              key={'strikeStyleButton'}
+            />
+            {/* Extra button to toggle code styles */}
+            <BasicTextStyleButton
+              key={'codeStyleButton'}
+              basicTextStyle={'code'}
+            />
+
+            <TextAlignButton
+              textAlignment={'left'}
+              key={'textAlignLeftButton'}
+            />
+            <TextAlignButton
+              textAlignment={'center'}
+              key={'textAlignCenterButton'}
+            />
+            <TextAlignButton
+              textAlignment={'right'}
+              key={'textAlignRightButton'}
+            />
+
+            <ColorStyleButton key={'colorStyleButton'} />
+
+            <NestBlockButton key={'nestBlockButton'} />
+            <UnnestBlockButton key={'unnestBlockButton'} />
+
+            <CreateLinkButton key={'createLinkButton'} />
+          </FormattingToolbar>
+        )}
+      ></FormattingToolbarController>
       <SuggestionMenuController
         triggerCharacter={"@"}
         getItems={async (query) =>
-          // Gets the mentions menu items
           filterSuggestionItems(getMentionMenuItems(editor), query)
         }
       />
     </BlockNoteView>
   );
 }
- 
-export default App;
- 
 
+export default App;
