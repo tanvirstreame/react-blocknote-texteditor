@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-blocknote-texteditor/static/css/main.0da3e215.css",
-    "main.js": "/react-blocknote-texteditor/static/js/main.fb7f610e.js",
+    "main.js": "/react-blocknote-texteditor/static/js/main.a2f6140b.js",
     "static/js/911.de3e4e1c.chunk.js": "/react-blocknote-texteditor/static/js/911.de3e4e1c.chunk.js",
     "static/js/570.fba3bad4.chunk.js": "/react-blocknote-texteditor/static/js/570.fba3bad4.chunk.js",
     "static/js/551.5fdeaa02.chunk.js": "/react-blocknote-texteditor/static/js/551.5fdeaa02.chunk.js",
@@ -40,7 +40,7 @@
     "static/media/inter-v12-latin-100.woff2": "/react-blocknote-texteditor/static/media/inter-v12-latin-100.9094111633a8ff639a30.woff2",
     "index.html": "/react-blocknote-texteditor/index.html",
     "main.0da3e215.css.map": "/react-blocknote-texteditor/static/css/main.0da3e215.css.map",
-    "main.fb7f610e.js.map": "/react-blocknote-texteditor/static/js/main.fb7f610e.js.map",
+    "main.a2f6140b.js.map": "/react-blocknote-texteditor/static/js/main.a2f6140b.js.map",
     "911.de3e4e1c.chunk.js.map": "/react-blocknote-texteditor/static/js/911.de3e4e1c.chunk.js.map",
     "570.fba3bad4.chunk.js.map": "/react-blocknote-texteditor/static/js/570.fba3bad4.chunk.js.map",
     "551.5fdeaa02.chunk.js.map": "/react-blocknote-texteditor/static/js/551.5fdeaa02.chunk.js.map",
@@ -61,6 +61,6 @@
   },
   "entrypoints": [
     "static/css/main.0da3e215.css",
-    "static/js/main.fb7f610e.js"
+    "static/js/main.a2f6140b.js"
   ]
 }
